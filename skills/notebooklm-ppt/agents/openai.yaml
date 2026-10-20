@@ -1,0 +1,4 @@
+interface:
+  display_name: "NotebookLM 可编辑 PPT"
+  short_description: "调用本地转换引擎，将图片型 PDF 或幻灯片还原为可编辑 PPT 并保留质量提示"
+  default_prompt: "使用 $notebooklm-ppt 把我提供的图片型演示文稿转换为可编辑 PPT，先检查运行环境，默认本地处理，并说明质量报告中的提醒。"
