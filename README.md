@@ -3,6 +3,7 @@
 把 NotebookLM 导出的图片型 PDF、PPTX 或幻灯片截图交给 AI 助手，调用本地 **NotebookLM PPT Editor**，生成可编辑文字的 PowerPoint，并保留质量检查提示。
 
 > **v0.1.0 公开测试版 · 需要单独安装转换引擎。**
+> 只想在窗口里转换文件？请直接使用 [NotebookLM PPT Editor 桌面 App](https://github.com/taomin8879/notebooklm-ppt-editor)，无需安装本 Skill。
 > 本仓库只包含 Skill 和调用脚本，不是完整转换软件，不包含桌面 App、OCR 模型或 API Key。与 Google / NotebookLM 无官方关联。
 
 ## 适合做什么
@@ -19,7 +20,7 @@
 | 项目 | 要求 |
 | --- | --- |
 | 电脑 | Apple 芯片 Mac，macOS 13 或更新 |
-| 转换引擎 | 完整 `NotebookLM PPT Editor.app`，build 185+，单独获取 |
+| 转换引擎 | 完整 `NotebookLM PPT Editor.app`，build 185+，[下载公开测试版](https://github.com/taomin8879/notebooklm-ppt-editor#下载) |
 | 其他依赖 | Python 3.9+、LibreOffice |
 | 助手 | 能加载 `SKILL.md` 并执行本地命令的环境 |
 | API | 默认不需要；在线增强需用户自己的 API 配置 |
@@ -41,7 +42,7 @@ cd notebooklm-ppt-skill/skills/notebooklm-ppt
 
 ### 2. 准备引擎
 
-已安装用户可以直接指定 `.app` 路径。尚未取得引擎的用户，可通过 [Issues](https://github.com/taomin8879/notebooklm-ppt-skill/issues) 询问试用与授权安排。**当前仓库不提供 App 下载、支付或授权激活服务。**
+已安装用户可以直接指定 `.app` 路径。尚未安装的用户，请从 [App 发布页](https://github.com/taomin8879/notebooklm-ppt-editor/releases/tag/v0.1.0-build186-public1) 下载完整测试包。该包仅支持 Apple 芯片 Mac、macOS 13+，需另装 LibreOffice，尚未 Apple 公证。请先阅读 [安装说明](https://github.com/taomin8879/notebooklm-ppt-editor/blob/main/docs/INSTALL.zh-CN.md)。本 Skill 仓库不包含 App，也不提供支付或授权激活服务。
 
 确保 LibreOffice 可正常启动。在解压后的 Skill 目录执行：
 
