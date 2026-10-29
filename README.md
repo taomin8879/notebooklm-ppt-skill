@@ -1,10 +1,25 @@
-# NotebookLM PPT Skill
+# NotebookLM PPT Editor · 软件安装与 AI Skill
 
-把 NotebookLM 导出的图片型 PDF、PPTX 或幻灯片截图交给 AI 助手，调用本地 **NotebookLM PPT Editor**，生成可编辑文字的 PowerPoint，并保留质量检查提示。
+直接使用 **NotebookLM PPT Editor 桌面软件**，把图片型 PDF、PPTX 或幻灯片截图转为可编辑文字的 PowerPoint。也可以安装可选 Skill，让本地 AI 助手调用软件。
 
-> **v0.1.0 公开测试版 · 需要单独安装转换引擎。**
+> **完整 App + 可选 AI Skill · 公开测试版**
 > 只想在窗口里转换文件？请直接使用 [NotebookLM PPT Editor 桌面 App](https://github.com/taomin8879/notebooklm-ppt-editor)，无需安装本 Skill。
-> 本仓库只包含 Skill 和调用脚本，不是完整转换软件，不包含桌面 App、OCR 模型或 API Key。与 Google / NotebookLM 无官方关联。
+> 仓库代码区包含 Skill 和调用脚本；**Releases 同时提供完整软件安装包和 Skill ZIP**，请按下表选择。与 Google / NotebookLM 无官方关联。
+
+## 下载：软件安装包与 Skill 分开选择
+
+| 你想做什么 | 下载哪个文件 |
+| --- | --- |
+| **直接打开软件，拖入文件转换** | **[下载完整 Mac 安装包 DMG（约 223 MB）](https://github.com/taomin8879/notebooklm-ppt-skill/releases/download/v0.1.0/NotebookLM-PPT-Editor-0.1.0-build186-public1-macOS-arm64.dmg)** |
+| 让本地 AI 助手调用已安装的软件 | [下载 Skill ZIP（约 11 KB）](https://github.com/taomin8879/notebooklm-ppt-skill/releases/download/v0.1.0/notebooklm-ppt-skill-v0.1.0.zip) |
+| 查看安装步骤 | [中文安装说明](https://github.com/taomin8879/notebooklm-ppt-skill/releases/download/v0.1.0/INSTALL.zh-CN.txt) |
+| 核对 DMG 完整性 | [SHA256SUMS.txt](https://github.com/taomin8879/notebooklm-ppt-skill/releases/download/v0.1.0/SHA256SUMS.txt) |
+
+**普通用户只下载 DMG 即可，不需要安装 Skill、Python 或配置 API Key。** DMG 内含完整 App、OCR 模型、背景修复模型及运行环境。软件版本是 **0.1.0 build 186 / public1**，Skill 版本是 **v0.1.0**。
+
+当前安装包仅支持 **Apple 芯片 Mac（M 系列）、macOS 13+**，需要另外安装 [LibreOffice](https://www.libreoffice.org/download/download-libreoffice/)。尚未 Apple Developer ID 签名与公证，首次启动可能被系统阻止；请阅读安装说明，不要关闭系统整体安全保护。没有 Windows 或 Intel Mac 安装包。
+
+桌面使用：下载 DMG → 将 App 拖入“应用程序” → 安装 LibreOffice → 打开 App，先试转一页。下方的 Python 和助手配置仅针对 Skill 用户。
 
 ## 适合做什么
 
@@ -15,7 +30,7 @@
 
 **不承诺：** 100% 还原、全部图形可编辑、字体完全一致。复杂图形、背景和部分文字区域可能仍以图片保留。最终交付前应人工对照源页。
 
-## 使用条件
+## Skill 使用条件
 
 | 项目 | 要求 |
 | --- | --- |
@@ -27,7 +42,7 @@
 
 目前不支持 Windows、Linux、Intel Mac 的转换，也不支持仅在网页聊天中安装后直接运行。已验证的是 macOS 上的脚本调用；不同助手对 Skill 的发现和权限管理可能不同。
 
-## 快速开始
+## Skill 快速开始
 
 ### 1. 获取 Skill
 
@@ -42,7 +57,7 @@ cd notebooklm-ppt-skill/skills/notebooklm-ppt
 
 ### 2. 准备引擎
 
-已安装用户可以直接指定 `.app` 路径。尚未安装的用户，请从 [App 发布页](https://github.com/taomin8879/notebooklm-ppt-editor/releases/tag/v0.1.0-build186-public1) 下载完整测试包。该包仅支持 Apple 芯片 Mac、macOS 13+，需另装 LibreOffice，尚未 Apple 公证。请先阅读 [安装说明](https://github.com/taomin8879/notebooklm-ppt-editor/blob/main/docs/INSTALL.zh-CN.md)。本 Skill 仓库不包含 App，也不提供支付或授权激活服务。
+已安装用户可以直接指定 `.app` 路径。尚未安装的用户，请从 [App 发布页](https://github.com/taomin8879/notebooklm-ppt-editor/releases/tag/v0.1.0-build186-public1) 下载完整测试包。该包仅支持 Apple 芯片 Mac、macOS 13+，需另装 LibreOffice，尚未 Apple 公证。请先阅读 [安装说明](https://github.com/taomin8879/notebooklm-ppt-editor/blob/main/docs/INSTALL.zh-CN.md)。本仓库代码区不包含 App 源码；完整安装包同时提供在本仓库 Releases，下载入口见页面顶部。仓库不提供支付或授权激活服务。
 
 确保 LibreOffice 可正常启动。在解压后的 Skill 目录执行：
 
@@ -92,4 +107,4 @@ python3 -m unittest discover -s tests -v
 
 ## 公开范围与授权
 
-本仓库公开调用层，核心引擎、模型、桌面 App 和商业授权不在其中。**公开可见不等于已授予开源许可证。** 当前未指定开源许可证；商业使用、再分发及引擎授权请先联系维护者确认。软件效果以实际试转及报告为准，不作收益承诺。
+本仓库代码区公开调用层；Releases 提供完整桌面 App 安装包，但不公开核心引擎源码，也不授予额外的模型或商业授权。**公开可见不等于已授予开源许可证。** 当前未指定开源许可证；商业使用、再分发及引擎授权请先联系维护者确认。软件效果以实际试转及报告为准，不作收益承诺。
